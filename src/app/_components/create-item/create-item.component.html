@@ -1,0 +1,56 @@
+<div class="row justify-content-center mt-3">
+  <div class="col-6">
+    <form #registerForm="ngForm" (ngSubmit)="createItem()" autocomplete="off">
+      <h2 class="text-center text-primary">Nuevo ítem</h2>
+
+      <hr>
+
+      <div class="mb-3">
+        <label for="code" class="form-label">Código:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="code"
+          name="code"
+          aria-describedby="codeHelp"
+          placeholder="Ingrese el código"
+          [(ngModel)]="model.code"
+        >
+        <small id="codeHelp" class="form-text text-muted">Código único de 5 caracteres.</small>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          aria-describedby="nameHelp"
+          placeholder="Ingrese el nombre"
+          [(ngModel)]="model.name"
+        >
+        <small id="nameHelp" class="form-text text-muted">255 caracteres máximo.</small>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          name="description"
+          aria-describedby="descriptionHelp"
+          placeholder="Ingrese la descripción"
+          [(ngModel)]="model.description"
+        >
+        <small id="descriptionHelp" class="form-text text-muted">65535 caracteres máximo.</small>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>
+
